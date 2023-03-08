@@ -5,7 +5,9 @@ public class FrameTester {
     public static void main(String[] args){
         // The window containing the components is called a frame window.
         // This creates the frame window.
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame("Test String");
+        frame.setBounds(100, 10, 800, 800);
+        //frame.setUndecorated(false);
 
         // Create a text field and set the text
         final int FIELD_WIDTH = 20;
@@ -23,7 +25,7 @@ public class FrameTester {
 
         // Defines the layout manager for the frame.
         // FlowLayout places the components next to eachother.
-        frame.setLayout(new FlowLayout());
+        frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
 
         // Add the buttons to the frame
         frame.add(helloButton);
@@ -34,7 +36,7 @@ public class FrameTester {
         // Set condition for program exit.
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         // Set window size to be minimum needed to display all objects added.
-        frame.pack();
+        //frame.pack();
         // Set the window to be visible.
         frame.setVisible(true);
     }
